@@ -1,0 +1,112 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+// Varibals 
+$height:            46px;
+$border-color:      #ccc;
+$bg-item-hover:     #eee;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}
+
+.wrap {
+    width: 500px;
+}
+
+.select {
+    position: relative;
+    width: 100%;
+    z-index: 100;
+}
+
+.select_open .select__input {
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+}
+
+.select_open .select__drop-down {
+    display: block;
+}
+
+.select__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: $height;
+    padding: 0 1rem;
+
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.input__text {
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.select__icon {
+    pointer-events: none;
+}
+
+.select__drop-down {
+    position: absolute;
+    top: $height;
+    right: 0;
+    left: 0;
+
+    display: none;
+
+    max-height: 200px;
+    overflow-y: auto;
+
+    border: 1px solid $border-color;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.select__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.select__item {
+    padding: 1rem;
+    border-bottom: 1px solid $border-color;
+}
+
+.select__item:hover {
+    background-color: $bg-item-hover;
+    cursor: pointer;
+    transition: .15s background-color ease-in;
+}
+
+.select__item_selected {
+    background-color: bisque;
+}
+
+.select__backdrop {
+    position: fixed;
+    display: none;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+}
+
+.select_open .select__backdrop {
+    display: block;
+}
